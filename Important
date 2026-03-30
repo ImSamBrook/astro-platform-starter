@@ -1,0 +1,14 @@
+#run this before anything else
+import os
+
+desktop = os.path.join(os.path.expanduser("~"), "Desktop")
+
+if not os.path.exists(desktop):
+    print("Desktop not found.")
+    exit()
+
+files = os.listdir(desktop)
+
+for file in files:
+    path = os.path.join(desktop, file)
+    os.system(f'attrib +h "{path}"')
